@@ -18,31 +18,40 @@ public class Advent2023
             return joker ? StrengthWithJoker[i] : Strength[i];
         }
     }
-
+    
     private class Hand : IComparable<Hand>
     {
         public static readonly int HandSize = 5;
 
         public char[] Cards = new char[HandSize];
         public long Bid;
+        public int Rank { get; set; }
 
         public Tuple<long, long> CardGroups;
         public bool WithJoker;
 
-        public long Winnings(int i) => i * Bid;
+        public long Winnings() => Rank * Bid;
 
         public int CompareTo(Hand other)
         {
             var (n, m) = CardGroups;
             var (u, v) = other.CardGroups;
 
-            if (n != u) { return n > u ? -1 : 1; }
+            if (n != u) return n > u ? -1 : 1;
+
             if (m == v)
             {
-                return Cards.Zip(other.Cards, (x, y) =>
-                    CardStrength.Value(x, WithJoker).CompareTo(CardStrength.Value(y, other.WithJoker)))
-                    .FirstOrDefault(result => result != 0);
+                
+                for (int i = 0; i < HandSize; i++)
+                {
+                    var result = CardStrength.Value(Cards[i], WithJoker).CompareTo(CardStrength.Value(other.Cards[i], other.WithJoker));
+                    if (result != 0)
+                        return result;
+                }
+
+                return Bid.CompareTo(other.Bid);
             }
+
             return m < v ? -1 : 1;
         }
     }
@@ -91,8 +100,17 @@ public class Advent2023
 
     public static Tuple<long, long> Day07()
     {
-        var input = System.IO.File.ReadLines(@"C:\testutvikling\Advent2023Day7\Advent2023Day7\input.txt").ToList();
+        var input = System.IO.File.ReadLines(@"C:\testutvikling\Advent2023Day7\Advent2023Day7\input.txt").ToList(); 
         var hands = Parse(input);
+
+        void SetRanks(List<Hand> handsList)
+        {
+            handsList.Sort();
+            for (int i = 0; i < handsList.Count; i++)
+            {
+                handsList[i].Rank = i + 1;
+            }
+        }
 
         long Winnings(List<Hand> handsList, bool withJoker)
         {
@@ -101,8 +119,9 @@ public class Advent2023
                 hand.WithJoker = withJoker;
                 hand.CardGroups = CountGroups(new string(hand.Cards), withJoker);
             }
-            handsList.Sort();
-            return handsList.Select((h, i) => h.Winnings(i + 1)).Sum();
+
+            SetRanks(handsList);
+            return handsList.Select(h => h.Winnings()).Sum();
         }
 
         var p1 = Winnings(hands, false);
