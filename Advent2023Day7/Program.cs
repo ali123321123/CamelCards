@@ -91,7 +91,7 @@ public class Advent2023
 
     public static Tuple<long, long> Day07()
     {
-        var input = System.IO.File.ReadLines("./source/2023/07/input.txt").ToList();
+        var input = System.IO.File.ReadLines(@"C:\testutvikling\Advent2023Day7\Advent2023Day7\input.txt").ToList();
         var hands = Parse(input);
 
         long Winnings(List<Hand> handsList, bool withJoker)

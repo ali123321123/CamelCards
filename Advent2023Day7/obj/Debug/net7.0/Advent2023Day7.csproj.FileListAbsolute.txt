@@ -1,0 +1,14 @@
+C:\testutvikling\Advent2023Day7\Advent2023Day7\bin\Debug\net7.0\Advent2023Day7.exe
+C:\testutvikling\Advent2023Day7\Advent2023Day7\bin\Debug\net7.0\Advent2023Day7.deps.json
+C:\testutvikling\Advent2023Day7\Advent2023Day7\bin\Debug\net7.0\Advent2023Day7.runtimeconfig.json
+C:\testutvikling\Advent2023Day7\Advent2023Day7\bin\Debug\net7.0\Advent2023Day7.dll
+C:\testutvikling\Advent2023Day7\Advent2023Day7\bin\Debug\net7.0\Advent2023Day7.pdb
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.GeneratedMSBuildEditorConfig.editorconfig
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.AssemblyInfoInputs.cache
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.AssemblyInfo.cs
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.csproj.CoreCompileInputs.cache
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.dll
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\refint\Advent2023Day7.dll
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.pdb
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\Advent2023Day7.genruntimeconfig.cache
+C:\testutvikling\Advent2023Day7\Advent2023Day7\obj\Debug\net7.0\ref\Advent2023Day7.dll
